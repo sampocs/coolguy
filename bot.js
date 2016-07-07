@@ -1,7 +1,7 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
-var botID = e1242e0c36c806a077e3423c2a;
+var botID = 85f09dd90bf5eb56c2570bf079;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
