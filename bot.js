@@ -1,7 +1,7 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
-var botID = process.env.BOT_ID;
+var botID = e1242e0c36c806a077e3423c2a;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
@@ -23,8 +23,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = cool();
-
+  botResponse = response();
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
@@ -53,6 +52,10 @@ function postMessage() {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
   botReq.end(JSON.stringify(body));
+}
+
+function response () {
+  return "BIG MAJOR MEEEEEEEP"
 }
 
 
