@@ -23,7 +23,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = "BIG MEEEEEEP";
+  botResponse = saying();
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
@@ -54,7 +54,7 @@ function postMessage() {
   botReq.end(JSON.stringify(body));
 }
 
-function response () {
+function saying() {
   return "BIG MAJOR MEEEEEEEP";
 }
 
