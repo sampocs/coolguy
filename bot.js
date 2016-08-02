@@ -5,11 +5,11 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /cool guy/;
+      botRegex = /shri/;
 
 
 
-  if(request.text && botRegex.test(request.text)) {
+  if(request.text && testResponse(request.text, botRegex)) {
     this.res.writeHead(200);
     postMessage();
     this.res.end();
@@ -17,6 +17,14 @@ function respond() {
     console.log("don't care");
     this.res.writeHead(200);
     this.res.end();
+  }
+}
+function testResponse (res, regex) {
+  if (regex.test(res)) {
+    return true;
+  }
+  else {
+    return false;
   }
 }
 
@@ -55,7 +63,7 @@ function postMessage() {
 }
 
 function saying() {
-  return "It's working foe";
+  return "#diversityfrat";
 }
 
 
