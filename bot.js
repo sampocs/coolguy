@@ -2,11 +2,12 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
+var keywords = [/shir/,/shri/,/cool guy/];
 
 //take response, find keyword
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /shri/;
+      botRegex = keywords;
 
 
   //checks if response has keyword
@@ -29,7 +30,10 @@ function testResponse (res, regex) {
   // else {
   //   return false;
   // }
-  console.log("bet");
+  if (regex[0]==="shir")
+    return true;
+  else 
+    return false;
 }
 
 //determines response
