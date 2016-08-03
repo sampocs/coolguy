@@ -35,7 +35,9 @@ function testResponse (res, keyword) {
       return true;
     }
   }
-  return
+  if (ballo) {
+    ballo = true;
+  }
 }
 
 
