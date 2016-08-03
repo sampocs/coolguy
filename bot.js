@@ -7,10 +7,10 @@ var keywords = [/shir/,/shri/,/cool guy/];
 //take and format response
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-
+  var botRegex = keywords;
 
   //checks if response has keyword
-  if(request.text && testResponse(request.text, keywords)) {
+  if(request.text && testResponse(request.text, botRegex)) {
     this.res.writeHead(200);
     postMessage();
     this.res.end();
