@@ -2,16 +2,15 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
-var keywords = [/shir/,/shri/,/cool guy/];
+var keywords = [/shir/,/shri/,/cool guy/,/@Bebe Ballo/];
 
-//take response, find keyword
+//take and format response
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = keywords;
 
 
   //checks if response has keyword
-  if(request.text && testResponse(request.text, botRegex)) {
+  if(request.text && testResponse(request.text, keywords)) {
     this.res.writeHead(200);
     postMessage();
     this.res.end();
@@ -23,15 +22,9 @@ function respond() {
 }
 
 //checks if response has keyword
-function testResponse (res, keywords) {
-  // if (regex.test(res)) {
-  //   return true;
-  // }
-  // else {
-  //   return false;
-  // }
-  for (var i=0; i<keywords.length; i++) {
-    if (keywords[i].test(res)) {
+function testResponse (res, keyword) {
+  for (var i=0; i<keyword.length; i++) {
+    if (keyword[i].test(res)) {
       return true;
     }
   }
