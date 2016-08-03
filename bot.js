@@ -10,7 +10,7 @@ var ballo = false;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
   name = request.name.toString();
-  if (name==="Sam Pocs") {
+  if (name==="Bebe Ballo") {
     ballo = true;
   }
 
