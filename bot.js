@@ -6,7 +6,7 @@ var keywords = [/shir/,/shri/,/cool guy/];
 
 //take response, find keyword
 function respond() {
-  var request = JSON.parse(this.req.chunks[0]),
+  var request = JSON.parse(this.req.chunks[0]);
       //botRegex = keywords;
 
 
