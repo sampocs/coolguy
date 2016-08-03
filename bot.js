@@ -30,7 +30,7 @@ function testResponse (res, regex) {
   // else {
   //   return false;
   // }
-  if (regex[0]==="shir")
+  if (regex[0]===res)
     return true;
   else 
     return false;
