@@ -3,11 +3,12 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 var keywords = [/shir/,/shri/,/cool guy/];
+var name = "";
 
 //take response, find keyword
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
-      //botRegex = keywords;
+  name = request.name;
 
 
   //checks if response has keyword
@@ -22,6 +23,7 @@ function respond() {
   }
 }
 
+
 //checks if response has keyword
 function testResponse (res, keyword) {
   for (var i=0; i<keyword.length; i++) {
@@ -32,10 +34,12 @@ function testResponse (res, keyword) {
   return
 }
 
+
 //determines response
 function saying() {
-  return "#diversityfrat";
+  return "#diversityfrat" + name;
 }
+
 
 //posts
 function postMessage() {
@@ -71,8 +75,5 @@ function postMessage() {
   });
   botReq.end(JSON.stringify(body));
 }
-
-
-
 
 exports.respond = respond;
