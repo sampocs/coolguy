@@ -3,12 +3,13 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 
+//take response, find keyword
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /shri/;
 
 
-
+  //checks if response has keyword
   if(request.text && testResponse(request.text, botRegex)) {
     this.res.writeHead(200);
     postMessage();
@@ -19,15 +20,24 @@ function respond() {
     this.res.end();
   }
 }
+
+//checks if response has keyword
 function testResponse (res, regex) {
-  if (regex.test(res)) {
-    return true;
-  }
-  else {
-    return false;
-  }
+  // if (regex.test(res)) {
+  //   return true;
+  // }
+  // else {
+  //   return false;
+  // }
+  console.log("bet");
 }
 
+//determines response
+function saying() {
+  return "#diversityfrat";
+}
+
+//posts
 function postMessage() {
   var botResponse, options, body, botReq;
 
@@ -62,9 +72,7 @@ function postMessage() {
   botReq.end(JSON.stringify(body));
 }
 
-function saying() {
-  return "#diversityfrat";
-}
+
 
 
 exports.respond = respond;
