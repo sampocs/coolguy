@@ -2,17 +2,21 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
-var keywords = [/shir/,/shri/,/cool guy/];
-var namey = "";
+var diversity = [/shir/,/shri/,/cool guy/];
+var name = "";
+var ballo = false;
 
 //take response, find keyword
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
-  namey = request.name.toString();
+  name = request.name.toString();
+  if (name==="Sam Pocs") {
+    ballo = true;
+  }
 
 
   //checks if response has keyword
-  if(request.text && testResponse(request.text, keywords)) {
+  if(request.text && testResponse(request.text, diversity)) {
     this.res.writeHead(200);
     postMessage();
     this.res.end();
@@ -37,7 +41,12 @@ function testResponse (res, keyword) {
 
 //determines response
 function saying() {
-  return namey;
+  if (ballo) {
+    return "stfu ballo";
+  }
+  else {
+    return "#diversityfrat";
+  }
 }
 
 
