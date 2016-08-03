@@ -4,15 +4,11 @@ var cool = require('cool-ascii-faces');
 var botID = process.env.BOT_ID;
 var diversity = [/shir/,/shri/,/cool guy/];
 var name = "";
-var ballo = false;
 
 //take response, find keyword
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
   name = request.name.toString();
-  if (name==="Sam Pocs") {
-    ballo = true;
-  }
 
 
   //checks if response has keyword
@@ -35,21 +31,13 @@ function testResponse (res, keyword) {
       return true;
     }
   }
-  if (ballo) {
-    return true;
-  }
   return false;
 }
 
 
 //determines response
 function saying() {
-  if (ballo) {
-    return "stfu ballo";
-  }
-  else {
     return "#diversityfrat";
-  }
 }
 
 
