@@ -23,17 +23,19 @@ function respond() {
 }
 
 //checks if response has keyword
-function testResponse (res, regex) {
+function testResponse (res, keywords) {
   // if (regex.test(res)) {
   //   return true;
   // }
   // else {
   //   return false;
   // }
-  if (regex[0]===res)
-    return true;
-  else 
-    return false;
+  for (var i=0; i<keywords.length; i++) {
+    if (keywords[i].test(res)) {
+      return true;
+    }
+  }
+  return false;
 }
 
 //determines response
