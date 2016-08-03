@@ -2,7 +2,7 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
-var keywords = ['/shir/','/shri/','/cool guy/'];
+var keywords = [/shir/,/shri/,/cool guy/];
 
 //take response, find keyword
 function respond() {
