@@ -23,15 +23,9 @@ function respond() {
 }
 
 //checks if response has keyword
-function testResponse (res, keywords) {
-  // if (regex.test(res)) {
-  //   return true;
-  // }
-  // else {
-  //   return false;
-  // }
-  for (var i=0; i<keywords.length; i++) {
-    if (keywords[i].test(res)) {
+function testResponse (res, keyword) {
+  for (var i=0; i<keyword.length; i++) {
+    if (keyword[i].test(res)) {
       return true;
     }
   }
