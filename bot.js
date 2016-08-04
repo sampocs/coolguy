@@ -2,18 +2,13 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
-var diversity = [/shir/i,/shri/i,/qwan/i],
-    blank = /./;
+var diversity = [/shir/i,/shri/i,/qwan/i];
 var name = "";
-var guySaid = false;
 
 //take response, find keyword
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
   name = request.name.toString();
-  if (name==="Pocs") {
-    guySaid=true;
-  }
 
 
   //checks if response has keyword
@@ -36,12 +31,9 @@ function testResponse (res, keyword) {
       return true;
     }
   }
-  if (guySaid) {
-    if (blank.test(res)) {
-      guySaid = false;
-      return true;
-    }
-  }
+  // if (name==="Pocs") {
+  //   return true;
+  // }
   return false;
 }
 
