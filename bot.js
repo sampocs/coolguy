@@ -2,9 +2,10 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
-var diversity = [/shir/i,/shri/i,/qwan/i], dave = /kyle davis/i;
+var diversity = [/shri/i, /lenkala/i, /keyshawn/i, /keybanks/i, /kebanks/i, /ebanks/i], dave = /kyle davis/i;      //make keywords
 var hasRun = false;
 var name = "", resp;
+
 
 //take response, find keyword
 function respond() {
@@ -38,7 +39,7 @@ function testResponse (res, keyword) {
   if (dave.test(res)) {
     return true;
   }
-  if (name==="Bebe Ballo" || name==="Shiryans Lenkala") {         //make it ballo, keshawn, shri
+  if (name==="Bebe Ballo" || name==="Shriyans Lenkala" || name==="Keyshawn Ebanks" ) {         //make it ballo, keshawn, shri
     return true;
   }
   return false;
@@ -54,8 +55,11 @@ function saying() {
     return cool();
   }
   else {
-    return "#diversityfrat";
+    return resp;
   }
+  // else {
+  //   return "#diversityfrat";
+  // }
 }
 
 
