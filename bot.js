@@ -2,7 +2,7 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
-var diversity = [/shri/i, /lenkala/i, /keyshawn/i, /keybanks/i, /kebanks/i, /ebanks/i], kyle = /kyle/i, davis = /davis/i;      //make keywords
+var diversity = [/shri/i, /lenkala/i, /keyshawn/i, /keybanks/i, /kebanks/i, /ebanks/i, /@Harry E 2/], kyle = /kyle/i, davis = /davis/i;      //make keywords
 var hasRun = false;
 var name = "", resp;
 
@@ -55,11 +55,8 @@ function saying() {
     return cool();
   }
   else {
-    return resp.toString();
+    return "#diversityfrat";
   }
-  // else {
-  //   return "#diversityfrat";
-  // }
 }
 
 
