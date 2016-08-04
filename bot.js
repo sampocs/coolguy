@@ -10,7 +10,7 @@ var guySaid = false;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
   name = request.name.toString();
-  if (name==="Pocs") {
+  if (name==="Sam Pocs") {
     guySaid=true;
   }
 
