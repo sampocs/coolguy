@@ -14,7 +14,7 @@ function respond() {
 
 
   //checks if response has keyword
-  if(request.text && testResponse(request.text, diversity && hasRun)) {
+  if(request.text && testResponse(request.text, diversity) && hasRun) {
     hasRun = false;
     this.res.writeHead(200);
     postMessage();
@@ -34,7 +34,7 @@ function testResponse (res, keyword) {
       return true;
     }
   }
-  if (name==="Sam Pocs") {
+  if (name==="Pocs") {
     return true;
   }
   return false;
