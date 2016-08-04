@@ -2,17 +2,20 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
-var diversity = [/shir/i,/shri/i,/qwan/i,/./];
+var diversity = [/shir/i,/shri/i,/qwan/i];
+var hasRun = false;
 var name = "";
 
 //take response, find keyword
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
   name = request.name.toString();
+  hasRun = true;
 
 
   //checks if response has keyword
-  if(request.text && testResponse(request.text, diversity)) {
+  if(request.text && testResponse(request.text, diversity && hasRun)) {
+    hasRun = false;
     this.res.writeHead(200);
     postMessage();
     this.res.end();
@@ -31,9 +34,9 @@ function testResponse (res, keyword) {
       return true;
     }
   }
-  // if (name==="Pocs") {
-  //   return true;
-  // }
+  if (name==="Pocs") {
+    return true;
+  }
   return false;
 }
 
