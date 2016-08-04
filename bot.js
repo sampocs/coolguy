@@ -2,7 +2,8 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
-var diversity = [/shir/i,/shri/i,/qwan/i];
+var diversity = [/shir/i,/shri/i,/qwan/i],
+    blank = /n+/;
 var name = "";
 var guySaid = false;
 
@@ -10,7 +11,7 @@ var guySaid = false;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
   name = request.name.toString();
-  if (name==="Sam Pocs") {
+  if (name==="Pocs") {
     guySaid=true;
   }
 
@@ -36,7 +37,9 @@ function testResponse (res, keyword) {
     }
   }
   if (guySaid) {
-    return true;
+    if (blank.test(res)) {
+      return true;
+    }
   }
   return false;
 }
