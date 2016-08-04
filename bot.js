@@ -35,6 +35,9 @@ function testResponse (res, keyword) {
       return true;
     }
   }
+  if (dave.test(res)) {
+    return true;
+  }
   if (name==="Bebe Ballo" || name==="Shiryans Lenkala") {         //make it ballo, keshawn, shri
     return true;
   }
@@ -48,7 +51,7 @@ function saying() {
     return "stfu Ballo";
   }
   else if (dave.test(resp)) {
-    return cool;
+    return cool();
   }
   else {
     return "#diversityfrat";
