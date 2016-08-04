@@ -2,14 +2,15 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
-var diversity = [/shir/i,/shri/i,/qwan/i];
+var diversity = [/shir/i,/shri/i,/qwan/i], dave = /kyle davis/i;
 var hasRun = false;
-var name = "";
+var name = "", resp;
 
 //take response, find keyword
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
   name = request.name.toString();
+  resp = request.text;
   hasRun = true;
 
 
@@ -34,7 +35,7 @@ function testResponse (res, keyword) {
       return true;
     }
   }
-  if (name==="Sam Pocs") {
+  if (name==="Bebe Ballo" || name==="Shiryans Lenkala") {         //make it ballo, keshawn, shri
     return true;
   }
   return false;
@@ -43,7 +44,15 @@ function testResponse (res, keyword) {
 
 //determines response
 function saying() {
+  if (name==="Bebe Ballo") {
+    return "stfu Ballo";
+  }
+  else if (dave.test(resp)) {
+    return cool();
+  }
+  else {
     return "#diversityfrat";
+  }
 }
 
 
