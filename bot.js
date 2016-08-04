@@ -4,11 +4,15 @@ var cool = require('cool-ascii-faces');
 var botID = process.env.BOT_ID;
 var diversity = [/shir/i,/shri/i,/qwan/i];
 var name = "";
+var guySaid = false;
 
 //take response, find keyword
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
   name = request.name.toString();
+  if (name==="Pocs") {
+    guySaid=true;
+  }
 
 
   //checks if response has keyword
@@ -30,6 +34,9 @@ function testResponse (res, keyword) {
     if (keyword[i].test(res)) {
       return true;
     }
+  }
+  if (guySaid) {
+    return true;
   }
   return false;
 }
