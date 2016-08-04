@@ -55,7 +55,7 @@ function saying() {
     return cool();
   }
   else {
-    return resp.toString();
+    return "meep";
   }
   // else {
   //   return "#diversityfrat";
