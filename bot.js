@@ -38,6 +38,7 @@ function testResponse (res, keyword) {
   }
   if (guySaid) {
     if (blank.test(res)) {
+      guySaid = false;
       return true;
     }
   }
