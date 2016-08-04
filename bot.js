@@ -34,7 +34,7 @@ function testResponse (res, keyword) {
       return true;
     }
   }
-  if (name==="Pocs") {
+  if (name==="Sam Pocs") {
     return true;
   }
   return false;
