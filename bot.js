@@ -48,7 +48,7 @@ function saying() {
     return "stfu Ballo";
   }
   else if (dave.test(resp)) {
-    return cool();
+    return cool;
   }
   else {
     return "#diversityfrat";
