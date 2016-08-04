@@ -3,7 +3,7 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 var diversity = [/shir/i,/shri/i,/qwan/i],
-    blank = /n+/;
+    blank = /./;
 var name = "";
 var guySaid = false;
 
