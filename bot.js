@@ -52,7 +52,7 @@ function saying() {
     return "stfu Ballo";
   }
   else if (name==="Tommy Stuart") {
-    return "All hail the founding father"
+    return "The founding father has spoken"
   }
   else if (kyle.test(resp) || davis.test(resp)) {
     return cool();
