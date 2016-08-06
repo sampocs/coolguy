@@ -2,7 +2,7 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
-var diversity = [/shri/i, /lenkala/i, /keyshawn/i, /keybanks/i, /kebanks/i, /ebanks/i, /@Shriyans Lenkala/, /@Keyshawn Ebanks/], kyle = /kyle/i, davis = /davis/i;      //make keywords
+var diversity = [/shri/i, /lenkala/i, /keyshawn/i, /keybanks/i, /kebanks/i, /ebanks/i, /@Shriyans Lenkala/, /@Keyshawn Ebanks/], kyle = /kyle/i, davis = /davis/i;      
 var hasRun = false;
 var name = "", resp;
 
@@ -39,7 +39,7 @@ function testResponse (res, keyword) {
   if (kyle.test(res) || davis.test(res)) {
     return true;
   }
-  if (name==="Bebe Ballo" || name==="Shriyans Lenkala" || name==="Keyshawn Ebanks" ) {         //make it ballo, keshawn, shri
+  if (name==="Bebe Ballo" || name==="Shriyans Lenkala" || name==="Keyshawn Ebanks" || name==="Tommy Stuart") {      
     return true;
   }
   return false;
@@ -50,6 +50,9 @@ function testResponse (res, keyword) {
 function saying() {
   if (name==="Bebe Ballo") {
     return "stfu Ballo";
+  }
+  else if (name==="Tommy Stuart") {
+    return "All hail the founding father"
   }
   else if (kyle.test(resp) || davis.test(resp)) {
     return cool();
