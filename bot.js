@@ -39,7 +39,7 @@ function testResponse (res, keyword) {
   if (kyle.test(res) || davis.test(res)) {
     return true;
   }
-  if (name==="Bebe Ballo" || name==="Shriyans Lenkala" || name==="Keyshawn Ebanks" || name==="Tommy Stuart") {      
+  if (name==="Bebe Ballo" || name==="Shriyans Lenkala" || name==="Keyshawn Ebanks") {      
     return true;
   }
   return false;
@@ -50,9 +50,6 @@ function testResponse (res, keyword) {
 function saying() {
   if (name==="Bebe Ballo") {
     return "stfu Ballo";
-  }
-  else if (name==="Tommy Stuart") {
-    return "The founding father has spoken"
   }
   else if (kyle.test(resp) || davis.test(resp)) {
     return cool();
